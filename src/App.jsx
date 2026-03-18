@@ -212,8 +212,13 @@ function App() {
 
       <div className="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
         <div className="app-container">
-          <h1 className="section-title">
+          <h1 className="section-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
             {showFavorites ? "YOUR FAVORITES" : "THE MENU"}
+            {!showFavorites && (
+              <div className="paintbrush-container" title="Open for cooking!">
+                <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnpyc253Zm80dnYwNHZzN3IwaG1lYzJxcm01cWphMWtsMmRheTA3MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohzdFCn9mYfmuAmEU/giphy.gif" alt="Funny Chef Gif" className="funny-gif" />
+              </div>
+            )}
           </h1>
 
           {!showFavorites && (
