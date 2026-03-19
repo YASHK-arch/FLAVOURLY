@@ -232,18 +232,39 @@ h1.section-title {
 }
 
 .recipe-card {
-  background: white;
-  color: black;
+  background-image: url('/crumpled-paper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1a1008;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
   padding: 24px;
   position: relative;
+  overflow: hidden;
+}
+
+/* Warm translucent overlay so text stays readable on the paper */
+.recipe-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 245, 220, 0.45);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all direct children sit above the overlay */
+.recipe-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .recipe-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 .recipe-image-container {
@@ -280,7 +301,7 @@ h1.section-title {
 }
 
 .recipe-header {
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed #b8966a;
   padding-bottom: 16px;
   margin-bottom: 16px;
 }
@@ -293,7 +314,7 @@ h1.section-title {
 
 .recipe-category {
   font-size: 28px;
-  color: #666;
+  color: #7a4e1e;
 }
 
 /* Custom Toggle Button & Creative UI */
